@@ -1,0 +1,8 @@
+from bs4 import BeautifulSoup as BS
+import requests
+
+url = "https://litnet.com/"
+resp = requests.get(url)
+soup = BS(resp.text, "html.parser")
+All_a = soup.find_all("a", class_="tag-link")
+print(All_a)
