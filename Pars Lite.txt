@@ -5,9 +5,5 @@ url = "https://litnet.com/"
 resp = requests.get(url) # код 200 получил
 soup = BS(resp.text, "html.parser")
 
-All_a = soup.find_all("a", class_="tag-link") # вытаскиваем все ссылки
-
-for item in All_a:
-    item_text = item.text
-    item_url = item.get("href")
-    print(f"{item_text}: https://" + f"{item_url}") # получили и текст и ссылку к нему
+All_a = soup.find("div", class_="box").find("ul").find_all("a")
+print(All_a) 
