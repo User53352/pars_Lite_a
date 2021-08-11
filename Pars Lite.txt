@@ -10,5 +10,4 @@ All_a = soup.find_all("a", class_="tag-link") # вытаскиваем все с
 for item in All_a:
     item_text = item.text
     item_url = item.get("href")
-    print(f"{item_text}: {item_url}")
-    
+    print(f"{item_text}: https://" + f"{item_url}") # получили и текст и ссылку к нему
